@@ -1,0 +1,364 @@
+@charset "utf-8";
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+html { overflow-y: scroll; }
+
+/* Align radios and text inputs with their label */
+
+input[type='radio'] { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em { font-style: italic; }
+
+img {
+  width: 100%;
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup { top: -.7em; }
+sub { bottom: -.25em; }
+
+/* 1.2. Clear Fix
+   ========================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
+/*for all*/
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a { 
+  display: inline-block;
+  text-decoration: none; 
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+/*for wrapper*/
+.wrapper {
+  max-width: 1360px;
+  width: 86%; 
+  margin: 0 auto;
+}
+/*=================================
+  Header styling starts here
+=================================*/
+
+header .wrapper {
+  width: 100%;
+  padding: 10px 0;
+  color: #fff;
+  background-color: #2b2e37;
+  font-size: 40px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+
+/*=================================
+  Header styling ends here
+=================================*/  
+
+/*=================================
+  main styling starts here
+=================================*/
+
+.main-form {
+  margin: 30px 25%;
+  border: 2px solid rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-top-left-radius: 25%;
+  border-bottom-right-radius: 25%;
+  box-shadow: 10px 10px rgba(0,0,0,0.4);
+}
+
+.upload-form {
+  margin: 0 18%;
+}
+
+.form-group {
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+}
+
+.upload-form .form-group { margin: 0 2%;}
+.upload-form .form-group label { margin-right: 9%;}
+.upload-form input { width: 100%; }
+
+.form-group label {
+  color: darkcyan;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 1px;
+  align-items: center;
+  margin-right: 10%;
+  width: 18%;
+}
+.form-group input[type= "text"]::before,
+.form-group input[type= "password"]::before {
+  content: '';
+  position: absolute;
+  background: #2b2e37;
+  color: #fff;
+  top: 0;
+  width: 18px;
+  float: left;
+  text-indent: 0;
+  display: block;
+  height: 10px;
+}
+
+.form-group input[type= "text"],
+.form-group input[type= "password"]{
+  padding: 10px 2%;
+  box-sizing: border-box;
+  font-size: 14px;
+  border: 1px solid rgba(0,0,0,0.6);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 13px;
+  border-left: hidden;
+  border-right: hidden;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  outline: none;
+}
+
+ main h3 {
+  margin: 20px;
+  font-size: 24px;
+  text-transform: capitalize;
+  word-spacing: 3px;
+}
+
+.form-control {
+  width: 100%;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#submit,
+#cancel,
+#upload {
+  width: 35%;
+  padding: 8px 10%;
+  margin: 10px 4%;
+  background: darkslategray;
+  border: none;
+  font-size: 16px;
+  border-radius: 20px;
+  box-shadow: 5px 5px darkcyan;
+  cursor: pointer;
+  color: whitesmoke;
+  font-family: sans-serif;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#upload { 
+  padding: 10px;
+  margin: 0;
+}
+
+.helperMessage,
+.error,
+.success{
+  width: 50%;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: absolute;
+  right: -60%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 2px;
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.error { 
+  display: inline-block; 
+  color: indianred;
+ }
+
+.success { 
+  display: inline-block;
+  color: green;
+ }
+
+.error::before {
+  content: "";
+  width: 0; 
+  height: 0;
+  position: relative;
+    top: -4px;
+    left: -49%;
+  font-size: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  border-right:10px solid #ededed;
+}
+
+.visible { display: inline-block; }
+.none { display: none;}
+
+/* customer Styling */
+
+.customer-list {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.customer {
+  width: 27%;
+  margin: 10px;
+  border: 1px solid #d8d3d0;
+  cursor: pointer;
+  position: relative;
+  transition: all .3s ease;
+  animation-name: fade;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+}
+
+@keyframes fade {
+  from{
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.customer:hover{ box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.4); }
+
+.customer img { max-height: 240px; }
+
+.customer-details{
+  margin: 10px 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.customer-details li{
+  padding: 5px;
+  display: flex;
+  width: 90%;
+  justify-content: space-evenly;
+}
+
+.customer-details span {
+    display: flex;
+    width: 50%;
+    margin: 5px 0%;
+    justify-content: left;
+}
+
+.customer-details span[class*="label"] {
+  padding: 5px 2%;
+  color: #fff;
+  margin: 0 3%;
+  font-size: 14px;
+  font-weight: 700;
+  width: 45%;
+  display: flex;
+}
+
+.label-name { background: #ffc107; }
+.label-course { background: #28a745; }
+.label-author { background: #dc3545; }
+
+/*=================================
+  main styling ends here
+=================================*/
+
+/*=================================
+  footer styling starts here
+=================================*/ 
+
+footer {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #2b2e37;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+}
+
+ /*=================================
+  footer styling ends here
+=================================*/ 
